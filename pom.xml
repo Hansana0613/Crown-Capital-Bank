@@ -9,6 +9,12 @@
     <version>1.0</version>
     <packaging>pom</packaging>
     <name>ccb-app</name>
+    <modules>
+        <module>core</module>
+        <module>ear</module>
+        <module>web</module>
+        <module>ejb</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
