@@ -1,5 +1,18 @@
-<% String alert = (String) request.getAttribute("alert"); if (alert != null) { %>
-<div class="alert">
+<%
+String alert = (String) request.getAttribute("alert");
+String alertType = (String) request.getAttribute("alertType"); // e.g., success, danger, info, warning
+if (alert != null) {
+    String typeClass = "alert-info";
+    if (alertType != null) {
+        switch (alertType) {
+            case "success": typeClass = "alert-success"; break;
+            case "danger": typeClass = "alert-danger"; break;
+            case "warning": typeClass = "alert-warning"; break;
+            case "info": default: typeClass = "alert-info"; break;
+        }
+    }
+%>
+<div class="alert <%= typeClass %>">
     <%= alert %>
 </div>
 <% } %> 

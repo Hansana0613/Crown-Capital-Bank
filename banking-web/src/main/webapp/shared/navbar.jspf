@@ -1,7 +1,11 @@
-<nav>
-    <ul>
-        <li><a href="/index.jsp">Home</a></li>
-        <li><a href="/dashboard.jsp">Dashboard</a></li>
-        <li><a href="/logout">Logout</a></li>
-    </ul>
+<nav class="header" style="padding:0;">
+    <div class="nav-container">
+        <a href="/index.jsp" class="logo">Crown Capital Bank</a>
+        <ul class="nav-menu">
+            <li><a href="/index.jsp">Home</a></li>
+            <li><a href="/dashboard.jsp">Dashboard</a></li>
+            <li><a href="/login.jsp">Login</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
 </nav> 
