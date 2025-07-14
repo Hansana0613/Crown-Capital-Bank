@@ -8,12 +8,11 @@
     <artifactId>Crown-Capital-Bank</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
-    <name>ccb-app</name>
+    <name>ccb-banking-app</name>
     <modules>
-        <module>core</module>
-        <module>ear</module>
-        <module>web</module>
-        <module>ejb</module>
+        <module>banking-model</module>
+        <module>banking-ejb</module>
+        <module>banking-web</module>
     </modules>
 
     <properties>

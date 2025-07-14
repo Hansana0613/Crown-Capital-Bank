@@ -1,0 +1,5 @@
+<% String alert = (String) request.getAttribute("alert"); if (alert != null) { %>
+<div class="alert">
+    <%= alert %>
+</div>
+<% } %> 
