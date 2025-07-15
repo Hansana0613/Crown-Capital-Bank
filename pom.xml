@@ -13,6 +13,11 @@
         <module>banking-model</module>
         <module>banking-ejb</module>
         <module>banking-web</module>
+        <module>banking-security</module>
+        <module>banking-api</module>
+        <module>banking-client</module>
+        <module>banking-common</module>
+        <module>banking-ear</module>
     </modules>
 
     <properties>

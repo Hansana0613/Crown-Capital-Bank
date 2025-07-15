@@ -7,10 +7,20 @@
     <file url="file://$PROJECT_DIR$/auth/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bank/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bank/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/banking-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/banking-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/banking-client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/banking-client/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/banking-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/banking-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/banking-ear/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/banking-ear/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/banking-ejb/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/banking-ejb/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/banking-model/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/banking-model/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/banking-security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/banking-security/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/banking-web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/banking-web/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core/src/main/java" charset="UTF-8" />
