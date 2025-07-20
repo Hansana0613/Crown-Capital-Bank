@@ -1,123 +1,248 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login - Crown Capital Bank</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crown Capital Bank - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo h1 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .login-btn:active {
+            transform: translateY(0);
+        }
+
+        .error-message {
+            background-color: #fee;
+            color: #c33;
+            padding: 0.75rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            border: 1px solid #fcc;
+        }
+
+        .success-message {
+            background-color: #efe;
+            color: #363;
+            padding: 0.75rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            border: 1px solid #cfc;
+        }
+
+        .info-box {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-box h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box li {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .info-box .role {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #666;
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 <body>
-    <div class="header">
-        <div class="nav-container">
-            <a href="index.jsp" class="logo">Crown Capital Bank</a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.jsp">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="hero">
-            <h1>🔐 Secure Login</h1>
-            <p>Access your Crown Capital Bank account securely</p>
+    <div class="login-container">
+        <div class="logo">
+            <h1>Crown Capital Bank</h1>
+            <p>Secure Banking System</p>
         </div>
 
-        <div class="card-grid">
-            <div class="card">
-                <h3>Login to Your Account</h3>
+        <!-- Display error messages -->
+        <% if (request.getAttribute("error") != null) { %>
+            <div class="error-message">
+                <%= request.getAttribute("error") %>
+            </div>
+        <% } %>
 
-                <%
-                    String error = request.getParameter("error");
-                    if (error != null) {
-                %>
-                    <div class="alert alert-danger">
-                        <strong>Login Failed!</strong> Invalid username or password.
-                    </div>
-                <% } %>
+        <!-- Display success messages -->
+        <% if (request.getParameter("message") != null) { %>
+            <% if ("logout_successful".equals(request.getParameter("message"))) { %>
+                <div class="success-message">
+                    You have been logged out successfully.
+                </div>
+            <% } %>
+        <% } %>
 
-                <form method="post" action="j_security_check" class="form-container">
-                    <div class="form-group">
-                        <label for="j_username">👤 Username</label>
-                        <input type="text" id="j_username" name="j_username"
-                               class="form-control" required
-                               placeholder="Enter your username">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="j_password">🔑 Password</label>
-                        <input type="password" id="j_password" name="j_password"
-                               class="form-control" required
-                               placeholder="Enter your password">
-                    </div>
-
-                    <div class="form-group">
-                        <label>
-                            <input type="checkbox" id="rememberMe" name="rememberMe">
-                            Remember me
-                        </label>
-                    </div>
-
-                    <div class="btn-group">
-                        <button type="submit" class="btn btn-primary">
-                            🚀 Login
-                        </button>
-                        <a href="#forgot-password" class="btn btn-secondary">
-                            🔄 Forgot Password?
-                        </a>
-                    </div>
-                </form>
+        <!-- Login Form -->
+        <form action="login" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text"
+                       id="username"
+                       name="username"
+                       required
+                       maxlength="50"
+                       value="<%= request.getAttribute("username") != null ? request.getAttribute("username") : "" %>"
+                       placeholder="Enter your username">
             </div>
 
-            <div class="card">
-                <h3>🛡️ Security Features</h3>
-                <ul class="dashboard-links">
-                    <li><a href="#mfa">Multi-Factor Authentication</a></li>
-                    <li><a href="#encryption">256-bit SSL Encryption</a></li>
-                    <li><a href="#monitoring">24/7 Security Monitoring</a></li>
-                    <li><a href="#alerts">Real-time Fraud Alerts</a></li>
-                </ul>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password"
+                       id="password"
+                       name="password"
+                       required
+                       maxlength="100"
+                       placeholder="Enter your password">
             </div>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <!-- Demo Users Information -->
+        <div class="info-box">
+            <h3>Demo Users (for testing):</h3>
+            <ul>
+                <li><span class="role">Admin:</span> admin / admin123</li>
+                <li><span class="role">Manager:</span> manager / manager123</li>
+                <li><span class="role">Teller:</span> teller / teller123</li>
+                <li><span class="role">Customer:</span> customer / customer123</li>
+            </ul>
         </div>
 
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-value">50K+</div>
-                <div class="stat-label">Satisfied Customers</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">99.9%</div>
-                <div class="stat-label">Uptime Guarantee</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">24/7</div>
-                <div class="stat-label">Customer Support</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">15+</div>
-                <div class="stat-label">Years of Trust</div>
-            </div>
+        <div class="footer">
+            <p>&copy; 2025 Crown Capital Bank. All rights reserved.</p>
         </div>
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2024 Crown Capital Bank. All rights reserved. | Regulated by Central Bank of Sri Lanka</p>
     </div>
 
     <script>
-        // Add some interactivity
+        // Auto-focus on username field when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('form');
-            const submitBtn = form.querySelector('button[type="submit"]');
+            document.getElementById('username').focus();
+        });
 
-            form.addEventListener('submit', function(e) {
-                submitBtn.innerHTML = '<span class="loading"></span> Authenticating...';
-                submitBtn.disabled = true;
-            });
+        // Form validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+
+            if (username === '' || password === '') {
+                e.preventDefault();
+                alert('Please enter both username and password.');
+                return false;
+            }
+
+            if (username.length < 3) {
+                e.preventDefault();
+                alert('Username must be at least 3 characters long.');
+                return false;
+            }
+
+            if (password.length < 6) {
+                e.preventDefault();
+                alert('Password must be at least 6 characters long.');
+                return false;
+            }
         });
     </script>
 </body>

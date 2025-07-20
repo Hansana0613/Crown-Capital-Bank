@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
-  <persistence-unit name="bankingPU" transaction-type="JTA">
-    <jta-data-source>jdbc/ccb_banking_system</jta-data-source>
-    <class>lk.hansanamadhuranga.ccb.model.entities.User</class>
-    <class>lk.hansanamadhuranga.ccb.model.entities.Account</class>
-    <class>lk.hansanamadhuranga.ccb.model.entities.Transaction</class>
-    <class>lk.hansanamadhuranga.ccb.model.entities.FundTransferSchedule</class>
-    <class>lk.hansanamadhuranga.ccb.model.entities.InterestRatePolicy</class>
-    <class>lk.hansanamadhuranga.ccb.model.entities.FixedDeposit</class>
-    <class>lk.hansanamadhuranga.ccb.model.entities.AuditLog</class>
-    <class>lk.hansanamadhuranga.ccb.model.entities.Approval</class>
-    <class>lk.hansanamadhuranga.ccb.model.entities.TimerLog</class>
-    <class>lk.hansanamadhuranga.ccb.model.entities.DailyBalanceSnapshot</class>
-    <class>lk.hansanamadhuranga.ccb.model.entities.MFAOtp</class>
-    <class>lk.hansanamadhuranga.ccb.model.entities.SystemSettings</class>
-    <shared-cache-mode>NONE</shared-cache-mode>
-    <properties>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
-      <property name="jakarta.persistence.sharedCache.mode" value="NONE"/>
-      <property name="eclipselink.logging.level" value="FINE"/>
-      <property name="eclipselink.cache.shared.default" value="false"/>
-    </properties>
-  </persistence-unit>
+    <persistence-unit name="bankingPU" transaction-type="JTA">
+        <jta-data-source>jdbc/bankingDB</jta-data-source><class>lk.hansanamadhuranga.ccb.model.entity.SystemSettings</class>
+        <class>lk.hansanamadhuranga.ccb.model.entity.TimerConfig</class>
+        <class>lk.hansanamadhuranga.ccb.model.entity.TimerLog</class>
+        <class>lk.hansanamadhuranga.ccb.model.entity.User</class>
+        <class>lk.hansanamadhuranga.ccb.model.entity.Account</class>
+        <class>lk.hansanamadhuranga.ccb.model.entity.Transaction</class>
+        <class>lk.hansanamadhuranga.ccb.model.entity.FundTransferSchedule</class>
+        <class>lk.hansanamadhuranga.ccb.model.entity.FixedDeposit</class>
+        <class>lk.hansanamadhuranga.ccb.model.entity.InterestRatePolicy</class>
+        <class>lk.hansanamadhuranga.ccb.model.entity.AuditLog</class>
+        <shared-cache-mode>NONE</shared-cache-mode>
+        <properties>
+            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+        </properties>
+    </persistence-unit>
 </persistence>

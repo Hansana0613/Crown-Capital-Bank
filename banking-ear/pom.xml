@@ -15,6 +15,35 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.12.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.12.6</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>0.12.6</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>lk.hansanamadhuranga.ccb</groupId>
+            <artifactId>banking-ejb</artifactId>
+            <version>1.0</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>lk.hansanamadhuranga.ccb</groupId>
+            <artifactId>banking-model</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
             <groupId>lk.hansanamadhuranga.ccb</groupId>
             <artifactId>banking-web</artifactId>
             <version>1.0</version>
@@ -38,21 +67,15 @@
                 <configuration>
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                     <modules>
-<!--                        <ejbModule>-->
-<!--                            <groupId>lk.jiat.app</groupId>-->
-<!--                            <artifactId>auth</artifactId>-->
-<!--                            <bundleFileName>auth-module.jar</bundleFileName>-->
-<!--                        </ejbModule>-->
-<!--                        <ejbModule>-->
-<!--                            <groupId>lk.jiat.app</groupId>-->
-<!--                            <artifactId>product</artifactId>-->
-<!--                            <bundleFileName>product-module.jar</bundleFileName>-->
-<!--                        </ejbModule>-->
+                        <ejbModule>
+                            <groupId>lk.hansanamadhuranga.ccb</groupId>
+                            <artifactId>banking-ejb</artifactId>
+                            <bundleFileName>banking-ejb-1.0.jar</bundleFileName>
+                        </ejbModule>
                         <webModule>
                             <groupId>lk.hansanamadhuranga.ccb</groupId>
                             <artifactId>banking-web</artifactId>
                             <contextRoot>/ccb-banking</contextRoot>
-                            <bundleFileName>banking-web.war</bundleFileName>
                         </webModule>
                     </modules>
                 </configuration>

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="../shared/navbar.jspf" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,22 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class="header">
-        <div class="nav-container">
-            <a href="../index.jsp" class="logo">Crown Capital Bank</a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="dashboard.jsp">🏠 Dashboard</a></li>
-                    <li><a href="approveHighValue.jsp">📝 Approvals</a></li>
-                    <li><a href="setInterestPolicy.jsp">💹 Interest Policy</a></li>
-                    <li><a href="auditDashboard.jsp">🔍 Audit</a></li>
-                    <li><a href="endOfDayLedger.jsp">📊 Ledger</a></li>
-                    <li><a href="viewTimerLogs.jsp">⏱️ Timer Logs</a></li>
-                    <li><a href="../logout">🚪 Logout</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
     <div class="container">
         <div class="hero">
             <h1>📊 Manager Dashboard</h1>
@@ -50,11 +35,10 @@
             <div class="card">
                 <h3>Quick Links</h3>
                 <ul class="dashboard-links">
-                    <li><a href="approveHighValue.jsp">📝 Approve High-Value Transfers</a></li>
-                    <li><a href="setInterestPolicy.jsp">💹 Set Interest Rate Policy</a></li>
-                    <li><a href="auditDashboard.jsp">🔍 Review Account Activity</a></li>
-                    <li><a href="endOfDayLedger.jsp">📊 End-of-Day Ledger Report</a></li>
-                    <li><a href="viewTimerLogs.jsp">⏱️ View Timer Service Logs</a></li>
+                <li><a href="approvals.jsp">📝 Pending Approvals</a></li>
+                <li><a href="interestPolicy.jsp">💹 Set Interest Rate Policy</a></li>
+                <li><a href="audit.jsp">🔍 Review Account Activity</a></li>
+                <li><a href="reports.jsp">📊 Ledger Reports</a></li>
                 </ul>
             </div>
             <div class="card">
@@ -71,8 +55,6 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        <p>&copy; 2024 Crown Capital Bank. All rights reserved. | Regulated by Central Bank of Sri Lanka</p>
-    </div>
+<%@ include file="../shared/footer.jspf" %>
 </body>
 </html> 

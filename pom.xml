@@ -10,14 +10,10 @@
     <packaging>pom</packaging>
     <name>ccb-banking-app</name>
     <modules>
-        <module>banking-model</module>
         <module>banking-ejb</module>
         <module>banking-web</module>
-        <module>banking-security</module>
-        <module>banking-api</module>
-        <module>banking-client</module>
-        <module>banking-common</module>
         <module>banking-ear</module>
+        <module>banking-model</module>
     </modules>
 
     <properties>
@@ -37,6 +33,16 @@
                 <groupId>jakarta.platform</groupId>
                 <artifactId>jakarta.jakartaee-web-api</artifactId>
                 <version>10.0.0</version>
+            </dependency><dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.6.15.Final</version>
+            <scope>provided</scope>
+        </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.33</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
